@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Version>0.1.1</Version>
+        <TargetFrameworks>netstandard2.1;net471</TargetFrameworks>
+        <LangVersion>7.3</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://nuget.bepinex.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="All"/>
+        <PackageReference Include="MonoMod.RuntimeDetour" Version="22.5.1.1" PrivateAssets="All"/>
+
+        <Reference Include="MMHook.SPZGameAssembly" >
+            <HintPath>$(GameDir)\shapez 2_Data\Managed\MMHook.SPZGameAssembly.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="SPZGameAssembly" >
+            <HintPath>$(GameDir)\shapez 2_Data\Managed\SPZGameAssembly.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine" >
+            <HintPath>$(GameDir)\shapez 2_Data\Managed\UnityEngine.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule" Publicize="True">
+            <HintPath>$(GameDir)\shapez 2_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+</Project>
